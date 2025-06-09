@@ -23,7 +23,7 @@ public class CsvImporter {
     public void importCsv() {
             try (BufferedReader br = new BufferedReader(
                     new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/postcodes.csv"))))) {
-                //new InputStreamReader(getClass().getResourceAsStream("/data/postcodes.csv")))) {
+
                 if (repo.count() > 0) { // wenn Daten vorhanden –> Import überspringen
                     return;
                 }
