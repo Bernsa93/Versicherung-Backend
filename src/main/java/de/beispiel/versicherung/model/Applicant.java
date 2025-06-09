@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Represents an insurance applicant with vehicle and location details,
+ * estimated kilometers, and the calculated premium.
+ */
 @Entity
 @Getter
 @Setter

@@ -5,6 +5,12 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Represents a geographic region identified by a postal code.
+ *
+ * Contains information such as state (bundesland), country, city,
+ * and a regionFactor used for insurance premium calculations.
+ */
 @Entity
 @Getter
 @Setter

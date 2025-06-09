@@ -10,6 +10,16 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Objects;
 
+/**
+ * Component responsible for importing Location data from a CSV file into the database.
+ *
+ * Reads the CSV resource file `/data/postcodes.csv` on application startup,
+ * parses each line into a Location entity, and saves it using LocationRepository.
+ *
+ * The import is skipped if the Location repository already contains data.
+ *
+ * CSV parsing includes basic cleaning and conversion of data types such as doubles and booleans.
+ */
 @Component
 public class CsvImporter {
     private final static String SEPARATOR = ",";

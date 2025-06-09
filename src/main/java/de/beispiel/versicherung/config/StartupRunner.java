@@ -6,6 +6,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Configuration class that runs initialization tasks on application startup.
+ *
+ * Executes CSV import of location data and transformation into region entities
+ * when the application starts.
+ */
 @Configuration
 public class StartupRunner {
 

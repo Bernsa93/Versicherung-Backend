@@ -8,6 +8,12 @@ import de.beispiel.versicherung.repository.RegionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+/**
+ * Service to calculate insurance premiums based on factors
+ * for estimated kilometers, vehicle type, and region.
+ *
+ * Combines factors from respective services to compute the final premium.
+ */
 @Service
 @RequiredArgsConstructor
 public class PremiumCalculationService {

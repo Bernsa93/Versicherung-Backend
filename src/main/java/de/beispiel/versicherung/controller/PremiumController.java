@@ -7,6 +7,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * REST controller providing endpoints to calculate insurance premiums.
+ *
+ * Exposes a POST endpoint at "/api/premium/calculate" that accepts
+ * a PremiumCalculationRequest and returns a PremiumCalculationResponse.
+ */
 @RestController
 @RequestMapping("/api/premium")
 @RequiredArgsConstructor

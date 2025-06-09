@@ -11,6 +11,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Component responsible for transforming Location entities into Region entities.
+ *
+ * Loads all Locations, groups them by postal code, and generates corresponding
+ * Region entities with predefined region factors based on federal state (Bundesland).
+ *
+ * Skips transformation if Region data already exists.
+ */
 @Component
 public class TransformLocationsToRegions {
     private final LocationRepository locationRepo;
