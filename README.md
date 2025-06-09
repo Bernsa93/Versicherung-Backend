@@ -33,11 +33,16 @@ Architektur
 Kommunitkation zwischen Frontend und Backend mittels REST-Api
 
 Backend-Services:
-PremiumCalculationService - Stellt die Berechnungslogik bereit
-KilometersService - Liefert den Kilometer-Factor anhand der geschätzen jährelichen Kilometerleistung
-RegionService - Liest den Region-Factor aus der Datenbank anhand einer Postleitzahl
-VehicleFactorService - Liefert den Fahrzeugtyp-Factor anhand eines übermittelen Typs
-PremiumController - REST-Endpunkt /api/premium/calculate zur Prämienberechnung
+PremiumCalculationService 
+  - Stellt die Berechnungslogik bereit
+KilometersService
+  - Liefert den Kilometer-Factor anhand der geschätzen jährelichen Kilometerleistung
+RegionService
+  - Liest den Region-Factor aus der Datenbank anhand einer Postleitzahl
+VehicleFactorService
+  - Liefert den Fahrzeugtyp-Factor anhand eines übermittelen Typs
+PremiumController
+  - REST-Endpunkt /api/premium/calculate zur Prämienberechnung
 
 Datenbank:
 Tabelle applicant - PK(generierte Sequenznummer) - Speichert Nutzeranfragen (Kilometer, Fahrzeugtyp, Postleitzahl und berechnete Prämie)
