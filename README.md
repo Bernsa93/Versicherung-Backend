@@ -22,7 +22,7 @@ Technologie-Stack
 - Spring Boot
 - Gradle
 - Microsoft SQL Server
-- Lombok
+- Lombok (Annotations für automatische Generierung von Code (z.B Getter / Setter))
 
 Architektur
 Kommunitkation zwischen Frontend und Backend mittels REST-Api
