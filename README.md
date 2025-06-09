@@ -23,6 +23,11 @@ Technologie-Stack
 - Gradle
 - Microsoft SQL Server
 - Lombok (Annotations für automatische Generierung von Code (z.B Getter / Setter))
+  
+- Test:
+  - JUnit5
+  - Spring BootTest
+  - MockMvc
 
 Architektur
 Kommunitkation zwischen Frontend und Backend mittels REST-Api
