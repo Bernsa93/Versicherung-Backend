@@ -8,8 +8,14 @@ Anwendung dient zur Berechnung von Versicherungsprämien auf Basis von Benutzere
 Zudem stellt die Anwendung eine HTTP-API für Drittanbieter bereit und speichert sämtliche Anfragen
 in einer Datenbank (Microsoft SQL Server).
 
-
-
+Setup:
+  1. Microsoft SQL Server einrichten (Datenbanksicherung InsuranceDB.bak in /src/main/resources/data wiederherstellen) 
+    InsuranceDB muss User SA - Passwort123! haben. 
+  2. Backend starten
+       ./gradlew bootRun
+       oder
+       Intelij Projekt laden und ausführen.
+  3. Bei neuer Datenbank wird die CSV in die Tabelle locations geladen und die region Tabelle erstellt. Dies kann etwas dauern.
 
 Technologie-Stack
 - Java (Amazon Corretto) 
