@@ -2,6 +2,7 @@ package de.beispiel.versicherung.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.beispiel.versicherung.webclient.WebClientHelper;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,6 +22,12 @@ import java.time.Duration;
 @Configuration
 public class OpenAiConfig {
 
+    @Getter
+    private final WebClient openAiWebClient;
+    @Getter
+    private final Duration timeout;
+    private final String apiKey;
+
     /**
      * Configures the OpenAI WebClient with API key and endpoint.
      *
@@ -28,11 +35,21 @@ public class OpenAiConfig {
      * @param apiUrl The OpenAI API endpoint URL
      * @return Configured WebClient instance
      */
-    @Bean
-    public WebClient openAiWebClient(
-            @Value("${openai.api.key:}") String apiKey,
+    OpenAiConfig(
+            @Value("${openai.api.key}") String apiKey,
             @Value("${openai.api.url:https://api.openai.com/v1}") String apiUrl) {
-        return WebClientHelper.createWebClient(apiKey, apiUrl);
+        this.apiKey = apiKey;
+        this.openAiWebClient = WebClientHelper.createWebClient(apiKey, apiUrl);
+        this.timeout = Duration.ofSeconds(30);
+    }
+
+    /**
+     * Checks if OpenAI API is available (API key configured).
+     *
+     * @return true if OpenAI API is available
+     */
+    public boolean isAvailable() {
+        return apiKey != null && !apiKey.isBlank();
     }
 
     /**
