@@ -32,7 +32,7 @@ class PremiumControllerTest {
 
     @Test
     void testCalculate() throws Exception {
-        PremiumCalculationRequest request = new PremiumCalculationRequest("suv", 10000, "50226");
+        PremiumCalculationRequest request = new PremiumCalculationRequest("50226", 10000, "SUV");
 
         MvcResult result =  mockMvc.perform(post("/api/premium/calculate")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -51,7 +51,7 @@ class PremiumControllerTest {
 
     @Test
     void testCalculateFallback() throws Exception {
-        PremiumCalculationRequest request = new PremiumCalculationRequest("lkw", -1, "Fehler");
+        PremiumCalculationRequest request = new PremiumCalculationRequest("01000", -1, "LKW");
 
         MvcResult result =  mockMvc.perform(post("/api/premium/calculate")
                         .contentType(MediaType.APPLICATION_JSON)
